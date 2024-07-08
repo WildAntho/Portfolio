@@ -179,6 +179,7 @@ header {
   gap: 15px;
   top: 30px;
   left: 30px;
+  width: fit-content;
   z-index: 100;
 }
 
@@ -258,6 +259,10 @@ header {
 }
 
 @media (max-width: 1024px) {
+  .langage-selector {
+    left: 90%;
+    top: 40px;
+  }
   header {
     left: 0;
   }
@@ -286,6 +291,10 @@ header {
 }
 
 @media (max-width: 767px) {
+  .langage-selector {
+    left: 80%;
+    top: 40px;
+  }
   .container-anthony {
     gap: 10px;
   }
