@@ -171,6 +171,38 @@ header {
   color: black;
 }
 
+.langage-selector {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  top: 30px;
+  left: 30px;
+  z-index: 100;
+}
+
+.langage-selector p {
+  font-family: "Roboto-mono", sans-serif;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.langage-selector p:hover {
+  text-decoration: underline;
+}
+
+.langage-selector .active-FR {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.langage-selector .active-EN {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
 @keyframes animate-phone {
   0% {
     stroke-dashoffset: 0;

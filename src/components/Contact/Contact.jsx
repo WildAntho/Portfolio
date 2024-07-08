@@ -1,10 +1,11 @@
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { CiMail } from "react-icons/ci";
 import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import "./contact.css";
 
-export default function Contact() {
+export default function Contact({ lang }) {
   const DURATION = 0.25;
   const STAGGER = 0.025;
   return (
@@ -60,10 +61,20 @@ export default function Contact() {
       </div>
       <div className="contact-container">
         <div>
-          <h1 className="last-sentence">
-            {"Prêt à créer quelque chose ensemble ?"}
-          </h1>
-          <h1 className="gradient">{"Discutons-en !"}</h1>
+          {lang === "FR" && (
+            <h1 className="last-sentence">
+              {"Prêt à créer quelque chose ensemble ?"}
+            </h1>
+          )}
+          {lang === "EN" && (
+            <h1 className="last-sentence">
+              {"Ready to create something together ?"}
+            </h1>
+          )}
+          {lang === "FR" && <h1 className="gradient">{"Discutons-en !"}</h1>}
+          {lang === "EN" && (
+            <h1 className="gradient">{"Let's discuss it !"}</h1>
+          )}
         </div>
         <div className="react-strictmode">
           <p className="react">
@@ -73,9 +84,16 @@ export default function Contact() {
           <p className="localisation">Paris, FRANCE</p>
           <div className="mail-container">
             <CiMail className="mail-icon" />
-            <a href="mailto:anthony.dufrenot@gmail.com">
-              Me contacter par email
-            </a>
+            {lang === "FR" && (
+              <a href="mailto:anthony.dufrenot@gmail.com">
+                Me contacter par email
+              </a>
+            )}
+            {lang === "EN" && (
+              <a href="mailto:anthony.dufrenot@gmail.com">
+                Contact me by email
+              </a>
+            )}
           </div>
         </div>
         <div className="link-social">
@@ -99,3 +117,7 @@ export default function Contact() {
     </div>
   );
 }
+
+Contact.propTypes = {
+  lang: PropTypes.string.isRequired,
+};

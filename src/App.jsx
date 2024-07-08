@@ -11,6 +11,8 @@ import First from "./components/First/First";
 import Footer from "./components/Footer/Footer";
 
 export default function App() {
+  const [lang, setLang] = useState("FR");
+  console.log(lang);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHover, setIsHover] = useState(false);
 
@@ -52,15 +54,38 @@ export default function App() {
 
   return (
     <main id="main-container">
+      <div className="langage-selector">
+        <p
+          className={lang === "FR" ? "active-FR" : ""}
+          onClick={() => setLang("FR")}
+        >
+          FR
+        </p>
+        <p
+          className={lang === "EN" ? "active-EN" : ""}
+          onClick={() => setLang("EN")}
+        >
+          EN
+        </p>
+      </div>
       <div className="burger" onClick={handleOpenNav}>
         <RxHamburgerMenu />
       </div>
-      <Nav handleCloseNav={handleCloseNav} open={open} />
+      <Nav handleCloseNav={handleCloseNav} open={open} lang={lang} />
       <section className="landing">
         <section className="presentation">
           <div className="container-anthony">
             <h1 className="Anthony">ANTHONY DUFRENOT</h1>
-            <p className="job-name">DEVELOPPEUR WEB / WEB MOBILE FULL STACK</p>
+            {lang === "FR" && (
+              <p className="job-name">
+                DEVELOPPEUR WEB / WEB MOBILE FULL STACK
+              </p>
+            )}
+            {lang === "EN" && (
+              <p className="job-name">
+                WEB & WEB MOBILE DEVELOPER / FULL STACK
+              </p>
+            )}
           </div>
         </section>
         <motion.section
@@ -76,8 +101,16 @@ export default function App() {
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
           >
-            <h1 className="Anthony">{"CONSTRUIRE L'AVENIR DU WEB"}</h1>
-            <p className="job-name">{"AUJOURD'HUI & ENSEMBLE"}</p>
+            {lang === "FR" && (
+              <h1 className="Anthony">{"CONSTRUIRE L'AVENIR DU WEB"}</h1>
+            )}
+            {lang === "EN" && (
+              <h1 className="Anthony">{"BUILDING THE FUTURE OF THE WEB"}</h1>
+            )}
+            {lang === "FR" && (
+              <p className="job-name">{"AUJOURD'HUI & ENSEMBLE"}</p>
+            )}
+            {lang === "EN" && <p className="job-name">{"TODAY & TOGETHER"}</p>}
           </div>
         </motion.section>
         {!open && (
@@ -108,12 +141,12 @@ export default function App() {
           </div>
         )}
       </section>
-      <About />
-      <Project />
-      <Contact />
+      <About lang={lang}/>
+      <Project lang={lang}/>
+      <Contact lang={lang}/>
       <Background />
       <First />
-      <Footer />
+      <Footer lang={lang}/>
     </main>
   );
 }

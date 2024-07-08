@@ -4,7 +4,7 @@ import "./nav.css";
 import { useEffect, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 
-export default function Nav({ handleCloseNav, open }) {
+export default function Nav({ handleCloseNav, open, lang }) {
   const [home, setHome] = useState(true);
   const [about, setAbout] = useState(false);
   const [project, setProject] = useState(false);
@@ -122,7 +122,12 @@ export default function Nav({ handleCloseNav, open }) {
         onClick={handleAbout}
       >
         <p className={open ? "number2" : "nav-link-number"}>#02</p>
-        <p className={open ? "text2" : "nav-link-text"}>A PROPOS</p>
+        {lang === "FR" && (
+          <p className={open ? "text2" : "nav-link-text"}>A PROPOS</p>
+        )}
+        {lang === "EN" && (
+          <p className={open ? "text2" : "nav-link-text"}>ABOUT</p>
+        )}
         <div className={about ? "line active" : "line"} />
       </div>
       <div
@@ -130,7 +135,12 @@ export default function Nav({ handleCloseNav, open }) {
         onClick={handleProject}
       >
         <p className={open ? "number3" : "nav-link-number"}>#03</p>
-        <p className={open ? "text3" : "nav-link-text"}>PROJETS</p>
+        {lang === "FR" && (
+          <p className={open ? "text3" : "nav-link-text"}>PROJETS</p>
+        )}
+        {lang === "EN" && (
+          <p className={open ? "text3" : "nav-link-text"}>PROJECTS</p>
+        )}
         <div className={project ? "line active" : "line"} />
       </div>
       <div
@@ -151,4 +161,5 @@ export default function Nav({ handleCloseNav, open }) {
 Nav.propTypes = {
   handleCloseNav: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
+  lang: PropTypes.string.isRequired,
 };

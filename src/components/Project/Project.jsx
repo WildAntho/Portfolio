@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import "./project.css";
@@ -8,7 +9,7 @@ import FramerMagneticNode from "../Nav/FramerMagneticNode";
 import FramerMagneticExpress from "../Nav/FramerMagneticExpress";
 import FramerMagneticMysql from "../Nav/FramerMagneticMysql";
 
-export default function Project() {
+export default function Project({ lang }) {
   const ref = useRef();
   const ref2 = useRef();
   const ref3 = useRef();
@@ -78,46 +79,50 @@ export default function Project() {
         <motion.div className="wrapper" initial="initial" whileHover="hovered">
           <div>
             <h1 className="section-title">
-              {"PROJETS".split("").map((l, i) => {
-                return (
-                  <motion.span
-                    key={i}
-                    variants={{
-                      initial: { y: 0 },
-                      hovered: { y: "-100%" },
-                    }}
-                    transition={{
-                      duration: DURATION,
-                      ease: "easeInOut",
-                      delay: STAGGER * i,
-                    }}
-                  >
-                    {l}
-                  </motion.span>
-                );
-              })}
+              {(lang === "FR" ? "PROJETS" : "PROJECTS")
+                .split("")
+                .map((l, i) => {
+                  return (
+                    <motion.span
+                      key={i}
+                      variants={{
+                        initial: { y: 0 },
+                        hovered: { y: "-100%" },
+                      }}
+                      transition={{
+                        duration: DURATION,
+                        ease: "easeInOut",
+                        delay: STAGGER * i,
+                      }}
+                    >
+                      {l}
+                    </motion.span>
+                  );
+                })}
             </h1>
           </div>
           <div className="hidden-text">
             <h1 className="section-title">
-              {"PROJETS".split("").map((l, i) => {
-                return (
-                  <motion.span
-                    key={i}
-                    variants={{
-                      initial: { y: "100%" },
-                      hovered: { y: 0 },
-                    }}
-                    transition={{
-                      duration: DURATION,
-                      ease: "easeInOut",
-                      delay: STAGGER * i,
-                    }}
-                  >
-                    {l}
-                  </motion.span>
-                );
-              })}
+              {(lang === "FR" ? "PROJETS" : "PROJECTS")
+                .split("")
+                .map((l, i) => {
+                  return (
+                    <motion.span
+                      key={i}
+                      variants={{
+                        initial: { y: "100%" },
+                        hovered: { y: 0 },
+                      }}
+                      transition={{
+                        duration: DURATION,
+                        ease: "easeInOut",
+                        delay: STAGGER * i,
+                      }}
+                    >
+                      {l}
+                    </motion.span>
+                  );
+                })}
             </h1>
           </div>
         </motion.div>
@@ -213,3 +218,7 @@ export default function Project() {
     </div>
   );
 }
+
+Project.propTypes = {
+  lang: PropTypes.string.isRequired,
+};
