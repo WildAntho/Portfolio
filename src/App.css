@@ -260,6 +260,9 @@ header {
 
 @media (max-width: 1024px) {
   .langage-selector {
+    z-index: 9;
+  }
+  .langage-selector {
     left: 90%;
     top: 40px;
   }
