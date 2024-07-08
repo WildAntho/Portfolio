@@ -1,0 +1,224 @@
+#about {
+  position: relative;
+  height: 100vh;
+  margin: 0 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  gap: 30px;
+}
+
+.container-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: fit-content;
+  overflow: hidden;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.hidden-text {
+  position: absolute;
+  top: 0;
+}
+
+span {
+  display: inline-block;
+}
+.section-title {
+  font-family: "Roboto+Flex", sans-serif;
+  font-size: 40px;
+  line-height: 35px;
+  font-weight: 200;
+  color: var(--secondary);
+  overflow: hidden;
+}
+
+.section-number {
+  font-family: "Roboto+Flex", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  color: var(--secondary);
+}
+
+.bienvenue {
+  font-family: "Human", sans-serif;
+  font-size: 100px;
+}
+
+.text-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.first-text,
+.second-text {
+  font-family: "Roboto+Flex", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 100;
+}
+
+.first-text {
+  text-align: end;
+  padding-left: 200px;
+  padding-right: 150px;
+}
+
+.second-text {
+  text-align: start;
+  padding-right: 250px;
+  padding-left: 100px;
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+.skills-container {
+  margin-top: 50px;
+  width: 80vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.skills-logo {
+  font-size: 35px;
+  cursor: pointer;
+}
+#skill-html:hover {
+  color: #f06529;
+  box-shadow: 0 0 100px #f06529;
+}
+#skill-css:hover {
+  color: #2965f1;
+  box-shadow: 0 0 100px #2965f1;
+}
+#skill-js:hover {
+  color: #f0db4f;
+  box-shadow: 0 0 100px #f0db4f;
+}
+#skill-react:hover {
+  color: #00d8ff;
+  box-shadow: 0 0 100px #00d8ff;
+  background-color: rgba(0, 216, 255, 0.1);
+}
+#skill-node:hover {
+  color: #68a063;
+  box-shadow: 0 0 100px #68a063;
+  background-color: rgba(104, 160, 99, 0.1);
+}
+#skill-express:hover {
+  color: white;
+  box-shadow: 0 0 100px white;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+#skill-mysql:hover {
+  color: #00758f;
+  box-shadow: 0 0 100px #00758f;
+  background-color: rgba(0, 117, 143, 0.1);
+}
+#skill-git:hover {
+  color: #f34f29;
+  box-shadow: 0 0 100px #f34f29;
+  background-color: rgba(243, 79, 41, 0.1);
+}
+#skill-github:hover {
+  color: white;
+  box-shadow: 0 0 100px white;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+.magnetic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+}
+
+@media (max-width: 1024px) {
+  #about {
+    margin: 0 40px;
+  }
+  .bienvenue {
+    font-size: 80px;
+  }
+  .skills-container {
+    width: 90vw;
+    gap: 30px;
+  }
+  .magnetic {
+    width: auto;
+    height: auto;
+  }
+  .first-text {
+    padding-right: 0;
+  }
+
+  .second-text {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  #about {
+    margin: 0 20px;
+    gap: 20px;
+  }
+  .section-title {
+    font-size: 30px;
+    font-weight: 200;
+    color: var(--secondary);
+  }
+
+  .section-number {
+    font-family: "Roboto+Flex", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--secondary);
+  }
+
+  .bienvenue {
+    font-size: 50px;
+  }
+
+  .text-container {
+    gap: 30px;
+  }
+
+  .first-text {
+    text-align: end;
+    padding-left: 0;
+    font-size: 13px;
+    line-height: 25px;
+  }
+
+  .second-text {
+    text-align: start;
+    padding-right: 0;
+    font-size: 13px;
+    line-height: 25px;
+  }
+
+  .skills-container {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .skills-logo {
+    font-size: 25px;
+  }
+}

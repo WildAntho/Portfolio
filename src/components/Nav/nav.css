@@ -1,0 +1,218 @@
+header {
+  width: 100vw;
+  height: 75px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  padding: 0 50px 0 0;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+}
+.line {
+  width: 0;
+  height: 1px;
+  background-color: var(--secondary);
+  margin-top: 5px;
+}
+
+.active {
+  width: 100%;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1.5);
+}
+
+.nav-link:hover p {
+  color: var(--secondary);
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1.5);
+}
+
+.nav-link:hover .line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--secondary);
+  margin-top: 5px;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1.5);
+}
+
+.home-active,
+.about-active,
+.project-active,
+.contact-active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.home-active p,
+.about-active p,
+.project-active p,
+.contact-active p {
+  cursor: pointer;
+  font-family: "Roboto+Mono", sans-serif;
+  color: white;
+  line-height: 17px;
+  color: var(--secondary);
+}
+
+.nav-link p {
+  font-family: "Roboto+Mono", sans-serif;
+  color: white;
+  line-height: 17px;
+  display: inline-block;
+}
+
+.nav-link-text {
+  font-size: 20px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.nav-link-number {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.close-mark {
+  display: none;
+}
+
+.progress-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--secondary);
+  transform-origin: 0%;
+  z-index: 10;
+}
+
+@media (max-width: 1024px) {
+  header {
+    padding: 0;
+    background-color: rgb(0, 117, 144);
+    transform: translateX(-100%);
+    width: 100vw;
+    height: 100vh;
+    border-bottom-right-radius: 30% 60%;
+    border-top-right-radius: 30% 60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.3s;
+  }
+  .nav-isactive {
+    transform: translateX(0);
+    border-radius: 0;
+    transition: all 0.75s cubic-bezier(1, 0, 0.1, 1);
+  }
+  .nav-link {
+    justify-content: center;
+    align-items: center;
+  }
+  .home-active,
+  .about-active,
+  .project-active,
+  .contact-active {
+    align-items: center;
+  }
+  .home-active p,
+  .about-active p,
+  .experience-active p,
+  .project-active p,
+  .contact-active p {
+    justify-content: center;
+    align-items: center;
+    line-height: 15px;
+  }
+  .active {
+    width: 100%;
+    transform: translateX(0);
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1.5) 0.5s;
+  }
+  .open-inactive {
+    transform: translateX(100%);
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1.5) 0.5s;
+  }
+  .nav-link p {
+    line-height: 17px;
+  }
+  .nav-link-text {
+    font-size: 20px;
+    opacity: 0;
+    transform: rotateX("90deg");
+    transform: translateY(50px);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .nav-link-number {
+    font-size: 15px;
+    opacity: 0;
+    transform: rotateX("90deg");
+    transform: translateY(50px);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .text1 {
+    display: inline-block;
+    opacity: 1;
+    transform: rotateX("0");
+    transform: translateY(0);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.2s;
+  }
+  .number1 {
+    opacity: 1;
+    transform: rotateX("0");
+    transform: translateY(0);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.2s;
+  }
+  .text2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.3s;
+  }
+  .number2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.3s;
+  }
+  .text3 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.4s;
+  }
+  .number3 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.4s;
+  }
+  .text4 {
+    opacity: 1;
+    transform: rotateX("0");
+    transform: translateY(0);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.5s;
+  }
+  .number4 {
+    opacity: 1;
+    transform: rotateX("0");
+    transform: translateY(0);
+    transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.5s;
+  }
+  .close-mark {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+  }
+}

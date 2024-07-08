@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100px;
+  color: rgb(155, 155, 155);
+  font-family: "Robot-flex", sans-serif;
+  z-index: -2;
+}
+
+.footer p {
+  text-align: center;
+  margin: 0 30px;
+}
