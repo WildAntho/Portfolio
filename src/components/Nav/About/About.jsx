@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { useInView, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "./about.css";
 import FramerMagneticHtml from "../FramerMagneticHtml";
 import FramerMagneticCss from "../FramerMagneticCSS";
@@ -12,9 +11,6 @@ import FramerMagneticMysql from "../FramerMagneticMysql";
 import FramerMagneticGithub from "../FramerMagneticGithub";
 
 export default function About() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   const DURATION = 0.25;
   const STAGGER = 0.025;
 
@@ -88,15 +84,7 @@ export default function About() {
           comme <span className="bold-text">MySQL</span>.
         </p>
       </div>
-      <div
-        className="skills-container"
-        ref={ref}
-        style={{
-          transform: isInView ? "none" : "translateX(-500px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(1, 0, 0, 1.5)",
-        }}
-      >
+      <div className="skills-container">
         <FramerMagneticHtml />
         <FramerMagneticCss />
         <FramerMagneticJs />
