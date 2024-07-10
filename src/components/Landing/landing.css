@@ -1,0 +1,178 @@
+.landing {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-anthony {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.Anthony {
+  font-family: "Human", sans-serif;
+  color: white;
+  font-size: 160px;
+  text-align: center;
+  line-height: 120px;
+  font-weight: 400;
+}
+
+.job-name {
+  font-family: "Roboto+Flex", sans-serif;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 200;
+}
+
+.scroll-logo-container {
+  position: absolute;
+  bottom: 20px;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.phone-logo {
+  position: relative;
+}
+
+.svg-logo path {
+  fill: none;
+  stroke: white;
+  stroke-width: 0.5;
+  stroke-dasharray: 80;
+  animation: animate-phone 3s infinite forwards;
+}
+
+.svg-arrow {
+  position: absolute;
+  top: 7px;
+  left: 23px;
+  animation: animate-arrow 3s infinite forwards;
+}
+.svg-arrow path {
+  fill: var(--secondary);
+  stroke: transparent;
+}
+
+.svg-logo:hover path {
+  animation: pause;
+  stroke: var(--secondary);
+}
+
+.svg-arrow:hover path {
+  animation: pause-arrow;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  mask-image: url("/mask.svg");
+  background-color: var(--secondary);
+  mask-repeat: no-repeat;
+  mask-position: 50%;
+  mask-size: 200px;
+  color: black;
+}
+
+.mask p {
+  color: black;
+}
+.mask h1 {
+  color: black;
+}
+
+@keyframes animate-phone {
+  0% {
+    stroke-dashoffset: 0;
+    stroke: white;
+  }
+  25% {
+    stroke-dashoffset: 80;
+    stroke: var(--secondary);
+  }
+  50% {
+    stroke-dashoffset: 160;
+    stroke: white;
+  }
+  100% {
+    stroke-dashoffset: 160;
+    stroke: white;
+  }
+}
+
+@keyframes animate-arrow {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+    top: 0;
+  }
+  25% {
+    transform: translateY(-50%);
+    opacity: 0;
+    top: 0;
+  }
+  50% {
+    transform: translateY(140%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0.7;
+    bottom: 0;
+  }
+}
+
+@keyframes pause {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pause-arrow {
+  to {
+    transform: translateY(150%);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-anthony {
+    gap: 15px;
+  }
+  .Anthony {
+    font-size: 110px;
+    line-height: 80px;
+  }
+
+  .job-name {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-anthony {
+    gap: 10px;
+  }
+  .Anthony {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .job-name {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+  }
+}
