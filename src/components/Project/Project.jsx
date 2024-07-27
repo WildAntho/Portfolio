@@ -198,11 +198,8 @@ export default function Project({ lang }) {
           onMouseMove={handleMove3}
           onMouseLeave={handleLeave3}
         >
-          <a
-            href="https://github.com/WildAntho/JS-Paris-BrainWaves-P3-Moovit"
-            target="blank"
-          >
-            <img src="/MOOVIT2.png" alt="aceflix-img" />
+          <a href="https://moovit.anthony-dufrenot.fr/" target="blank">
+            <img src="/MOOVIT3.png" alt="aceflix-img" />
             <button type="button" className="button-visit">
               VISITER
             </button>
