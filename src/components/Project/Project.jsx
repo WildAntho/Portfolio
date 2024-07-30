@@ -183,7 +183,7 @@ export default function Project({ lang }) {
       </section>
       <section className="project-container-3">
         <a
-          href="https://github.com/WildAntho/JS-Paris-BrainWaves-P3-Moovit"
+          href="https://moovit.anthony-dufrenot.fr/"
           target="blank"
         >
           <div className="project-title">
